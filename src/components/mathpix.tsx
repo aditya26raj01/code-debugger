@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { MathpixLoader, MathpixMarkdown } from "mathpix-markdown-it";
 
+//
 const MathpixLoaderComponent = MathpixLoader as any;
 const MathpixMarkdownComponent = MathpixMarkdown as any;
 

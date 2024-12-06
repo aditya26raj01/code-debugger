@@ -26,6 +26,7 @@ const CodeEditor = ({ session, setSession }: CodeEditorProps) => {
         }),
       });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedCode, session?.code, session?.language]);
 
   if (!session?.language) {
