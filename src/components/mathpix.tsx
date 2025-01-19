@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { MathpixLoader, MathpixMarkdown } from "mathpix-markdown-it";
+import React from "react";
 
-//
-const MathpixLoaderComponent = MathpixLoader as any;
-const MathpixMarkdownComponent = MathpixMarkdown as any;
+const MathpixLoaderComponent = MathpixLoader;
+const MathpixMarkdownComponent = MathpixMarkdown;
 
 const Mathpix = ({ latexText }: { latexText: string }) => {
   return (
