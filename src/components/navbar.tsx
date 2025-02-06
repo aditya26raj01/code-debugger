@@ -9,7 +9,7 @@ export default function Navbar() {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         <Stack sx={{ flexDirection: "row", gap: 1.5, alignItems: "center" }}>
           <Icon component={FiCodesandbox} sx={{ fontSize: 40 }} />
-          <Typography variant="h6">sandbugger.io</Typography>
+          <Typography variant="h6">BufFix.ai</Typography>
         </Stack>
         <SignedIn>
           <UserButton />

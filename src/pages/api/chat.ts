@@ -7,7 +7,10 @@ import { OpenAI } from "openai";
 
 const openai = new OpenAI();
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   if (req.method === "POST") {
     const { userId } = getAuth(req);
     if (!userId) {
@@ -31,7 +34,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         {
           role: "system",
           content:
-            "You are a helpful AI based code helper tool developed by a company called SandBugger.io.",
+            "You are a helpful AI based code helper tool developed by a company called BufFix.ai.",
         },
         {
           role: "user",
@@ -46,7 +49,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         {
           role: "system",
           content:
-            "You are a helpful AI based code helper tool developed by a company called SandBugger.io.",
+            "You are a helpful AI based code helper tool developed by a company called BufFix.ai.",
         },
         {
           role: "user",
@@ -63,7 +66,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         {
           role: "system",
           content:
-            "You are a helpful AI based code helper tool developed by a company called SandBugger.io.",
+            "You are a helpful AI based code helper tool developed by a company called BufFix.ai.",
         },
         {
           role: "user",
