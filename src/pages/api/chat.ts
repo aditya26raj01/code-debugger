@@ -34,13 +34,34 @@ export default async function handler(
         {
           role: "system",
           content:
-            "You are a helpful AI based code helper tool developed by a company called BufFix.ai.",
+            "You are a helpful AI based code helper tool developed by a company called BugFix.ai.",
+        },
+        {
+          role: "system",
+          content: `You must respond only in the coding language provided: ${session.language}, you must run the code in the coding interpreter and then follow the instructions provided by the user.`,
         },
         {
           role: "user",
           content: `Code: ${session.code} Prompt: ${message} Coding Language: ${session.language}`,
         },
       ],
+      tools: [
+        {
+          type: "function",
+          function: {
+            name: "run_code",
+            description: "Run the code in the coding interpreter",
+            parameters: {
+              type: "object",
+              properties: {
+                code: { type: "string" },
+                language: { type: "string" },
+              },
+            },
+          },
+        },
+      ],
+      tool_choice: "auto",
     });
 
     const code = await openai.chat.completions.create({
@@ -49,11 +70,11 @@ export default async function handler(
         {
           role: "system",
           content:
-            "You are a helpful AI based code helper tool developed by a company called BufFix.ai.",
+            "You are a helpful AI based code helper tool developed by a company called BugFix.ai.",
         },
         {
           role: "user",
-          content: `Code: ${completion.choices[0].message.content} Prompt: Extract just the code to be shown in an IDE, just give code no markdown specifier for what code language it is.`,
+          content: `Code: ${completion.choices[0].message.content} Prompt: Extract just the code to be shown in an IDE, just give code no markdown specifier for what code language it is. Strictly just the code no other text.`,
         },
       ],
     });
@@ -66,7 +87,7 @@ export default async function handler(
         {
           role: "system",
           content:
-            "You are a helpful AI based code helper tool developed by a company called BufFix.ai.",
+            "You are a helpful AI based code helper tool developed by a company called BugFix.ai.",
         },
         {
           role: "user",

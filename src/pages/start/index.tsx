@@ -5,7 +5,7 @@ export default function Page() {
   return (
     <Box sx={{ py: 4 }}>
       <Typography variant="h3" sx={{ fontWeight: 700 }}>
-        Welcome to BufFix.ai!
+        Welcome to BugFix.ai!
       </Typography>
       <Typography variant="h6" sx={{ fontWeight: 700 }}>
         Your Ultimate Debugging Sandbox

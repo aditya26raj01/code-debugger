@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>BufFix.ai</title>
+        <title>BugFix.ai</title>
         <meta
           name="description"
           content="A simple AI based bug tracking tool for developers"
